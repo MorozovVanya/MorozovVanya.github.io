@@ -13,18 +13,48 @@
           body {
         display: flex;
         flex-direction: column;
-        min-height: 100vh; /* Set minimum height to 100% of the viewport height */
+        min-height: 100vh; 
         background-image: url('backround.jpg');
         background-size: cover;
         color: #fff;
     }
+    h6{color:black}
+    
     
     main {
-        flex: 1; /* Allow the main content to grow and fill the available space */
+        flex: 1; 
     }
+    button {
+    position: central;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    font-size: 100px;
+    
+    
+    border: none;
+    cursor: pointer;
+}
+button1 {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+
+    map{
+            height: 400px;
+            width: 100%;
+        }
     
     footer {
-        flex-shrink: 0; /* Don't allow the footer to shrink */
+        flex-shrink: 0; 
     }
     
             .about-section {
@@ -41,6 +71,12 @@
             .about-section h2 {
                 margin-bottom: 10px;
             }
+            .map {
+    display: flex;
+    flex-direction: column;
+    margin-left: 280px;
+    margin-top: 50px;
+}
             
         </style>
     </head>
@@ -63,6 +99,10 @@
                             <li class="nav-item px-3"><a class="nav-link" href="cabinet.html">Личный кабинет</a></li>
                             <li class="nav-item px-3"><a class="nav-link" href="#about">Главная</a></li>
                             <li class="nav-item px-3"><a class="nav-link" href="#route">Выбор маршрута</a></li>
+                            <li class="nav-item px-3"><a class="nav-link" href="#guide">Наши гиды</a></li>
+                            <li class ="nav-item px-3"><button type="button" class="btn" data-toggle="modal" data-target="#myModal">
+                                Создать заявку
+                            </button></li>
                             <li class="nav-item px-3"><a class="nav-link" href="#contacts">Контакты</a></li>
                         </ul>
                     </div>
@@ -104,122 +144,170 @@
                     </div>
                 </div>
             </section>
-    
+            <div class="map">
+                <h2> Интерактивная карта</h2>
+                <div id="mapContainer">
+                    <iframe id="mapIframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d577332.5662515962!2d36.72621025329628!3d55.58103352605414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54afc73d4b0c9%3A0x3d44d6cc5757cf4c!2z0JzQvtGB0LrQstCw!5e0!3m2!1sru!2sru!4v1705098594680!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            
             <section class="container my-4">
-                <h3 id="route" >Выбор маршрута</h3>
+                <h3 id="route">Выбор маршрута</h3>
                 <div class="row">
-                    <table class="border border-gray">
+                    <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th class="p-3 border">Имя</th>
                                 <th class="p-3 d-none d-md-table-cell border">Описание</th>
-                                <th class="p-3 d-none d-lg-table-cell border">Стоимость</th>
-                                <th class="p-3 border"></th>
+                                <th class="p-3 d-none d-lg-table-cell border">Стоимость/час</th>
+                                <th class="p-3 d-none d-lg-table-cell border">Предложительный гид</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rout">
+
+                        
                             
                                 <tr>
                                     <td class="p-3 border ">Красная Площадь и Спасская башня</th>
                                     <td class="p-3 border ">Начните свой путь с исторического центра – Красной Площади. Посмотрите на красиво украшенные здания и обязательно посетите Спасскую башню.</th>
                                     <td class="p-3 border ">1500</th> 
+                                    <td class="p-3 border ">Иван Иванович</th> 
                                 </tr>
                                 <tr>
                                     <td class="p-3 border">Парк Горького и Нескучный сад</td>
                                     <td class="p-3 border">Прогуляйтесь по живописному Парку Горького и насладитесь красотой Нескучного сада. Здесь вы найдете красивые аллеи, озера и скверы.</td>
                                     <td class="p-3 border ">1000</td>
+                                    <td class="p-3 border ">Мария Александровна</th> 
                                 </tr>
                                 <tr>
                                     <td class="p-3 border ">ВДНХ и Павильон "Космос"</td>
                                     <td class="p-3 border ">Посетите Выставочный комплекс ВДНХ и особенно замечательный Павильон "Космос". Это место полное архитектурных шедевров.</td>
                                     <td class="p-3 border ">1500</td>
+                                    <td class="p-3 border ">Иван Иванович</th> 
                                 </tr>
                                 <tr>
                                     <td class="p-3 border ">Коломенское и Церковь Воскресения в Черемушках</td>
                                     <td class="p-3 border ">Отправьтесь в Коломенское, где вы сможете насладиться парком и посетить красивую Церковь Воскресения в Черемушках.</td>
                                     <td class="p-3 border ">2000</td>
+                                    <td class="p-3 border ">Мария Александровна</th> 
                                 </tr>
                                 <tr>
                                     <td class="p-3 border ">Арбатская улица и дом Пушкина</td>
                                     <td class="p-3 border ">Прогуляйтесь по исторической Арбатской улице и обязательно посетите дом-музей А.С. Пушкина, чтобы окунуться в атмосферу русской литературы.</td>
                                     <td class="p-3 border ">1200</td>
+                                    <td class="p-3 border ">Алексей Сергеевич</th> 
                                 </tr>
                                 <tr>
                                     <td class="p-3 border ">Московский Кремль и Архангельский собор</td>
                                     <td class="p-3 border ">Посетите Московский Кремль и осмотрите Архангельский собор, величественное сооружение с богатой историей.</td>
                                     <td class="p-3 border ">3000</td>
+                                    <td class="p-3 border ">Екатерина Петровна</th> 
                                 </tr>
                                 <tr>
                                     <td class="p-3 border ">Замоскворечье и Музей-заповедник "Царицыно"</td>
                                     <td class="p-3 border ">Завершите свой путь в Замоскворечье, где расположен Музей-заповедник "Царицыно". Здесь вы найдете красивый дворец и парк.</td>
                                     <td class="p-3 border ">2500</td>
+                                    <td class="p-3 border ">Мария Александровна</th> 
                                 </tr>
-                            </tr>
-                        </thead>
-                        <tbody id="routes-list">
+                                
+                            
                         </tbody>
+                        
+                        
+                        
                     </table>
+                    
                 </div>
-            </section>
-    
-            <section id="guidesSection" class="container my-4 d-none">
-                <h3 class="col-md-6">Доступные гиды по маршруту: <span id=""></span></h3>
-                <div class="row">
-                    <table class="border">
-                        <thead>
-                            <tr>
-                                <th class="p-3 border"></th>
-                                <th class="p-3 border">ФИО</th>
-                                <th class="p-3 d-none d-md-table-cell border">Язык</th>
-                                <th class="p-3 d-none d-md-table-cell border">Опыт работы</th>
-                                <th class="p-3 border">Стоимость услуг</th>
-                                <th class="p-3 border"></th>
-                            </tr>
-                        </thead>
-                        <tbody id="guides-list">
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-    
-            <section class="modal fade" id="guideModal" tabindex="-1">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Создание заявки</h5>
-                            <button class="btn-close" data-bs-dismiss="modal"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="container" id="order-body">
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-secondary" data-bs-dismiss="modal">Отменить</button>
-                            <button class="btn btn-secondary" id="order-send">Отправить</button>
-                        </div>
-                    </div>
-                </div>
+                <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous" id="prevPage">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#1" id="page1">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#2" id="page2">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#3" id="page3">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#4" id="page4">4</a></li>
+                        <li class="page-item"><a class="page-link" href="#5" id="page5">5</a></li>
+                        <li class="page-item"><a class="page-link" href="#6" id="page6">6</a></li>
+                        <li class="page-item"><a class="page-link" href="#7" id="page7">7</a></li>
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next" id="nextPage">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
             </section>
             
-            <section class="container my-3">
-                <h3>Создать новую заявку</h3>
-                <form id="createRequestForm">
-                    <div class="mb-3">
-                        <label for="routeSelect" class="form-label">Выберите маршрут</label>
-                        <select class="form-select" id="routeSelect" required>
-                            <option value="Красная Площадь и Спасская башня">Красная Площадь и Спасская башня</option>
-                            <option value="Парк Горького и Нескучный сад">Парк Горького и Нескучный сад</option>
-                            <option value="ВДНХ и Павильон 'Космос'">ВДНХ и Павильон 'Космос'</option>
-                            <option value="Коломенское и Церковь Воскресения в Черемушках">Коломенское и Церковь Воскресения в Черемушках</option>
-                            <option value="Арбатская улица и дом Пушкина">Арбатская улица и дом Пушкина</option>
-                            <option value="Московский Кремль и Архангельский собор">Московский Кремль и Архангельский собор</option>
-                            <option value="Замоскворечье и Музей-заповедник 'Царицыно'">Замоскворечье и Музей-заповедник 'Царицыно'</option>
+            <div class="container my-3">
+                <h3 id="guide" class="form-label">Наши гиды</h3>
+                <select class="form-select" id="guideSelect" onchange="showGuideInfo()" required>
+                    <option value="Иванов Иван Иванович">Иванов Иван Иванович</option>
+                    <option value="Петрова Екатерина Петровна">Петрова Екатерина Петровна</option>
+                    <option value="Александров Алексей Сергеевич">Александров Алексей Сергеевич</option>
+                    <option value="Плоткина Мария Александровна">Плоткина Мария Александровна</option>
+                </select>
+            </div>
+            <div id="guideInfo" class="container my-3">
+                <script>
+                    
+                    var guidesInfo = {
+                        "Иванов Иван Иванович": "Опытный гид с богатым опытом в проведении экскурсий. Знает много интересных фактов о истории и культуре Москвы. Знание языков:Русский,Английский. Стаж работы: 3 года",
+                        "Петрова Екатерина Петровна": "Энтузиастка и любительница искусства. Специализируется на экскурсиях по музеям и художественным галереям.Знание языков:Русский,Английский,Французский. Стаж работы: 10 лет",
+                        "Александров Алексей Сергеевич": "Эксперт в истории архитектуры. Специализируется на экскурсиях по историческим зданиям и памятникам архитектуры.Знание языков:Русский,Французский. Стаж работы: 7 лет",
+                        "Плоткина Мария Александровна": "Профессиональный гид с фокусом на природные достопримечательности и парки. Отлично разбирается в природе и окружающей средеЗнание языков:Русский. Стаж работы: 4 года."
+                    };
+                    
+                    function showGuideInfo() {
+                        var guideSelect = document.getElementById("guideSelect");
+                        var selectedGuide = guideSelect.options[guideSelect.selectedIndex].value;
+                    
+                       
+                        var guideInfoBlock = document.getElementById("guideInfo");
+                        guideInfoBlock.innerHTML = "Информация о гиде: " + guidesInfo[selectedGuide];
+                        
+                    }
+                    </script>  
+            </div>
+           
+            
+
+            
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6 class="modal-title" id="myModalLabel">Создать новую заявку</h6>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="createRequestForm">
+                                <div class="mb-3">
+                                    <label for="routeSelect" class="form-label">Выберите маршрут</label>
+                                    <select class="form-select" id="routeSelect" required>
+
+                                        <option value="Красная Площадь и Спасская башня">Красная Площадь и Спасская башня</option>
+                                        <option value="Парк Горького и Нескучный сад">Парк Горького и Нескучный сад</option>
+                                        <option value="ВДНХ и Павильон 'Космос'">ВДНХ и Павильон 'Космос'</option>
+                                        <option value="Коломенское и Церковь Воскресения в Черемушках">Коломенское и Церковь Воскресения в Черемушках</option>
+                                        <option value="Арбатская улица и дом Пушкина">Арбатская улица и дом Пушкина</option>
+                                        <option value="Московский Кремль и Архангельский собор">Московский Кремль и Архангельский собор</option>
+                                        <option value="Замоскворечье и Музей-заповедник 'Царицыно'">Замоскворечье и Музей-заповедник 'Царицыно'</option>
                         </select>
                     </div>
                     <div class="mb-3">
                         <label for="guideSelect" class="form-label">Выберите гида</label>
                         <select class="form-select" id="guideSelect" required>
-                            <option value="Иван Иванович">Иван Иванович</option>
-                            <option value="Екатерина Петровна">Екатерина Петровна</option>
-                            <option value="Алексей Сергеевич">Алексей Сергеевич</option>
-                            <option value="Мария Александровна">Мария Александровна</option>
+                            <option value="Иванов Иван Иванович">Иванов Иван Иванович</option>
+                            <option value="Петрова Екатерина Петровна">Петрова Екатерина Петровна</option>
+                            <option value="Александров Алексей Сергеевич">Александров Алексей Сергеевич</option>
+                            <option value="Плоткина Мария Александровна">Плоткина Мария Александровна</option>
                         </select>
                     </div>
                     <div class="mb-3">
@@ -228,7 +316,10 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Создать заявку</button>
                 </form>
-            </section>
+            </div>
+        </div>
+    </div>
+</div>
             
             
         
@@ -242,12 +333,173 @@
                     <li class="col-md-9 text-end"></li>
                 </ul>
             </div>
+            <button1 onclick="scrollToTop()">Наверх</button1>
         </footer>
     
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="main.js"></script>
+        <!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> --> 
+        <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>-->
+        <!--<script src="main.js"></script>--> 
+        
+        
+    </script>
+    
+
+    <script>
+        // кнопка наверх
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+    
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const routes = document.querySelectorAll('#rout tr'); 
+            const itemsPerPage = 1; 
+            let currentPage = 1; 
+    
+            showPage(currentPage); 
+            highlightPage(currentPage); 
+    
+            function showPage(page) {
+                const startIndex = (page - 1) * itemsPerPage;
+                const endIndex = startIndex + itemsPerPage;
+    
+                routes.forEach((route, index) => {
+                    if (index >= startIndex && index < endIndex) {
+                        route.style.display = 'table-row'; 
+                    } else {
+                        route.style.display = 'none'; 
+                    }
+                });
+            }
+    
+            function highlightPage(page) {
+                const pageLinks = document.querySelectorAll('.pagination a.page-link');
+                pageLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+    
+                const currentPageLink = document.getElementById(`page${page}`);
+                if (currentPageLink) {
+                    currentPageLink.classList.add('active'); 
+                }
+            }
+    
+            function handlePaginationClick(event) {
+                event.preventDefault();
+    
+                const targetPage = parseInt(event.target.innerText);
+    
+                if (!isNaN(targetPage)) {
+                    currentPage = targetPage;
+                    showPage(currentPage);
+                    highlightPage(currentPage);
+                } else if (event.target.getAttribute('aria-label') === 'Next') {
+                    currentPage++;
+                    showPage(currentPage);
+                    highlightPage(currentPage);
+                } else if (event.target.getAttribute('aria-label') === 'Previous' && currentPage > 1) {
+                    currentPage--;
+                    showPage(currentPage);
+                    highlightPage(currentPage);
+                }
+            }
+    
+            const paginationLinks = document.querySelectorAll('.pagination a.page-link');
+            paginationLinks.forEach(link => {
+                link.addEventListener('click', handlePaginationClick);
+            });
+    
+           //next prev
+            const nextPageLink = document.getElementById('nextPage');
+            nextPageLink.addEventListener('click', handlePaginationClick);
+    
+            const prevPageLink = document.getElementById('prevPage');
+            prevPageLink.addEventListener('click', handlePaginationClick);
+        });
+    </script>
+    <script>
+        // Получаем элементы страниц и контейнер карты
+        var page1 = document.getElementById('page1');
+        var page2 = document.getElementById('page2');
+        var page3 = document.getElementById('page3');
+        var page4 = document.getElementById('page4');
+        var page5 = document.getElementById('page5');
+        var page6 = document.getElementById('page6');
+        var page7 = document.getElementById('page7');
+        var mapContainer = document.getElementById('mapContainer');
+        var mapIframe = document.getElementById('mapIframe');
+        
+        // Обработчик события при клике на страницу #1
+        page1.addEventListener('click', function() {
+            // Устанавливаем видимость карты и меняем src
+            mapContainer.style.display = 'block';
+            mapIframe.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.261963245058!2d37.61887453608665!3d55.75395140479863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a5a738fa419%3A0x7c347d506b52311f!2z0JrRgNCw0YHQvdCw0Y8g0J_Qu9C-0YnQsNC00Yw!5e0!3m2!1sru!2sru!4v1705098695996!5m2!1sru!2sru";
+        });
+        
+        // Обработчик события при клике на страницу #2
+        page2.addEventListener('click', function() {
+            // Устанавливаем видимость карты и меняем src
+            mapContainer.style.display = 'block';
+            mapIframe.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d35924.15051657956!2d37.58025015377532!3d55.75399580785329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54b08f8fdcbc3%3A0x4375cd8bcd701ff0!2z0KbQtdC90YLRgNCw0LvRjNC90YvQuSDQv9Cw0YDQuiDQutGD0LvRjNGC0YPRgNGLINC4INC-0YLQtNGL0YXQsCDQuNC8LiDQnC7Qk9C-0YDRjNC60L7Qs28!5e0!3m2!1sru!2sru!4v1705098778825!5m2!1sru!2sru";
+        });
+        
+        // Обработчик события при клике на страницу #3
+        page3.addEventListener('click', function() {
+            // Устанавливаем видимость карты и меняем src
+            mapContainer.style.display = 'block';
+            mapIframe.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2240.5944998956716!2d37.61706649414032!3d55.834997316341784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x414acbfa40bd4301%3A0xb0e9dd3e35a58046!2z0J_QsNCy0LjQu9GM0L7QvSDihJYzNCDQmtC-0YHQvNC-0YE!5e0!3m2!1sru!2sru!4v1705098846032!5m2!1sru!2sru";
+        });
+        
+        // Обработчик события при клике на страницу #4
+        page4.addEventListener('click', function() {
+            // Устанавливаем видимость карты и меняем src
+            mapContainer.style.display = 'block';
+            mapIframe.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18003.770305283375!2d37.6482662403221!3d55.66340433198213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x414ab3708655957b%3A0xba3820b94be825e!2z0JzRg9C30LXQuS3Ql9Cw0L_QvtCy0LXQtNC90LjQuiDQmtC-0LvQvtC80LXQvdGB0LrQvtC1!5e0!3m2!1sru!2sru!4v1705098900894!5m2!1sru!2sru";
+        });
+        
+        // Обработчик события при клике на страницу #5
+        page5.addEventListener('click', function() {
+            // Устанавливаем видимость карты и меняем src
+            mapContainer.style.display = 'block';
+            mapIframe.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d71860.28983434406!2d37.433371597265605!3d55.747487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54bb3fad60d3f%3A0x602662a00f59780a!2z0JzQtdC80L7RgNC40LDQu9GM0L3QsNGPINC60LLQsNGA0YLQuNGA0LAg0JAu0KEuINCf0YPRiNC60LjQvdCw!5e0!3m2!1sru!2sru!4v1705098935573!5m2!1sru!2sru";
+        });
+        
+        // Обработчик события при клике на страницу #6
+        page6.addEventListener('click', function() {
+            // Устанавливаем видимость карты и меняем src
+            mapContainer.style.display = 'block';
+            mapIframe.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.434307522817!2d37.612704594110575!3d55.75095732273733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a50b315e573%3A0xa886bf5a3d9b2e68!2z0JzQvtGB0LrQvtCy0YHQutC40Lkg0JrRgNC10LzQu9GM!5e0!3m2!1sru!2sru!4v1705098960837!5m2!1sru!2sru";
+        });
+        
+        // Обработчик события при клике на страницу #7
+        page7.addEventListener('click', function() {
+            // Устанавливаем видимость карты и меняем src
+            mapContainer.style.display = 'block';
+            mapIframe.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2253.443956354642!2d37.68357367707982!3d55.611690402851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x414ab3cc65ff1f95%3A0x6261499f9a7afd91!2z0JzRg9C30LXQuS3Qt9Cw0L_QvtCy0LXQtNC90LjQuiDQptCw0YDQuNGG0YvQvdC-!5e0!3m2!1sru!2sru!4v1705098984243!5m2!1sru!2sru";
+        });
+        </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    
+    
+    
+   
+        
+
+            
     </body>
+
     
     </html>
     
