@@ -311,8 +311,17 @@ button1 {
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="dateInput" class="form-label">Выберите дату</label>
-                        <input type="date" class="form-control" id="dateInput" required>
+                        <label for="durationSelect" class="form-label">Выберите длительность</label>
+                        <select class="form-select" id="durationSelect" required>
+                            <option value="1">1 час</option>
+                            <option value="2">2 часа</option>
+                            <option value="3">3 часа</option>
+                            <!-- Add more duration options as needed -->
+                        </select>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="additionalFeatures">
+                        <label class="form-check-label" for="additionalFeatures">Дополнительные функции</label>
                     </div>
                     <button type="submit" class="btn btn-primary">Создать заявку</button>
                 </form>
