@@ -323,6 +323,10 @@ button1 {
                             
                         </select>
                     </div>
+                    <div class="mb-3">
+                        <label for="numberOfPeopleInput" class="form-label" style="color: black;">Выберите количество человек</label>
+                        <input type="number" class="form-control" id="numberOfPeopleInput" required>
+                    </div>
                     <div class="mb-3 form-check">
                         <input type="checkbox" class="form-check-input" id="additionalFeatures1">
                         <label class="form-check-label" for="additionalFeatures1" style="color: black;">Скидка для пенсионеров: 25%</label>
@@ -331,6 +335,9 @@ button1 {
                     <div class="mb-3 form-check">
                         <input type="checkbox" class="form-check-input" id="additionalFeatures2">
                         <label class="form-check-label" for="additionalFeatures2" style="color: black;">Легкие закуски и горячие напитки во время экскурсии. Увеличивают стоимость на  1000 рублей за каждого посетителя. </label>
+                    </div>
+                    <div class="mb-3">
+                        <label id="totalCostLabel" style="color: black;">Итоговая стоимость:0 </label>
                     </div>
                     
                     <button type="submit" class="btn btn-primary">Создать заявку</button>
@@ -461,7 +468,7 @@ button1 {
         
         
         page2.addEventListener('click', function() {
-            // Устанавливаем видимость карты и меняем src
+            
             mapContainer.style.display = 'block';
             mapIframe.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d35924.15051657956!2d37.58025015377532!3d55.75399580785329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54b08f8fdcbc3%3A0x4375cd8bcd701ff0!2z0KbQtdC90YLRgNCw0LvRjNC90YvQuSDQv9Cw0YDQuiDQutGD0LvRjNGC0YPRgNGLINC4INC-0YLQtNGL0YXQsCDQuNC8LiDQnC7Qk9C-0YDRjNC60L7Qs28!5e0!3m2!1sru!2sru!4v1705098778825!5m2!1sru!2sru";
         });
