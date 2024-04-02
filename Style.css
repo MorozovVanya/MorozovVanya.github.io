@@ -1,0 +1,170 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Стили для контейнера */
+.container {
+    min-height: 100%;
+    margin-bottom: -50px; /* Высота футера */
+    padding-bottom: 50px; /* Высота футера */
+}
+
+
+
+/* Общие стили для всей страницы */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 75%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Стили для шапки (header) */
+.header {
+    background-color: #333; /* Цвет фона верхней панели */
+    color: white; /* Цвет текста верхней панели */
+    padding: 10px 0; /* Внутренние отступы верхней панели */
+}
+
+.main-menu ul {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+.main-menu li {
+    display: inline;
+    margin-right: 30px; /* Расстояние между кнопками */
+}
+
+.main-menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* Стили для кнопок при наведении */
+.main-menu a:hover {
+    text-decoration: underline;
+}
+
+.main-menu li:last-child {
+    margin-right: 0;
+}
+
+
+
+/* Стили для разделов (sections) */
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+p {
+    text-align: justify;
+}
+
+ol {
+    margin-left: 20px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+/* Стили для подвала (footer) */
+footer {
+    background-color: rgb(48, 44, 44);
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+footer li {
+    list-style: none;
+    margin: 5px 0;
+}
+
+/* Стили для ссылок */
+a {
+    color: #575757;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #000000;
+}
+
+a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1f1f1f;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Стили при наведении на кнопку */
+a.button:hover {
+    background-color: #747577;
+    text-decoration: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Стили для заголовков таблицы */
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+/* Стили для ячеек таблицы */
+td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+img {
+    max-width: 50%; /* Чтобы изображение подстраивалось под ширину контейнера */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    display: block; /* Убирает пустое пространство под изображением */
+    margin: 0 auto; /* Центрирует изображение по горизонтали внутри контейнера */
+    border: 2px solid black; /* Добавляем рамку вокруг изображения */
+}
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Делает контейнер main по высоте равным высоте окна браузера */
+}
+
+form {
+    width: 50%; /* Задает ширину формы */
+    padding: 20px; /* Добавляет отступы вокруг формы */
+    border: 1px solid #ccc; /* Добавляет рамку вокруг формы */
+    border-radius: 10px; /* Делает скругленные углы формы */
+}
+
